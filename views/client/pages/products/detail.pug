@@ -1,0 +1,44 @@
+extends ../../layouts/default 
+block main
+  .container.py-5
+  .row
+    .col-lg-8.mx-auto
+      article.card.shadow-sm
+        .card-body
+          h1.card-title.text-center.mb-4 Chi tiết sản phẩm
+          section.mb-4
+            h2.h5.text-muted Tiêu đề
+            if(productDetail.title)
+              p.lead= productDetail.title
+          section.mb-4
+            h2.h5.text-muted Mô tả
+            if(productDetail.description)
+              p= productDetail.description
+          .row.mb-4
+            .col-sm-6
+              section
+                h2.h5.text-muted Giá
+                if(productDetail.price)
+                  p.fs-4.fw-bold.text-primary #{productDetail.price}đ
+            .col-sm-6 
+              section
+                h2.h5.text-muted Giảm giá
+                if(productDetail.discountPercentage.toString())
+                  p.badge.bg-danger.fs-6 #{productDetail.discountPercentage} '% OFF'
+          .row.mb-4
+            .col-sm-6
+              section
+                h2.h5.text-muted Số lượng
+                if(productDetail.stock.toString())
+                  p #{productDetail.stock} sản phẩm có sẵn
+            .col-sm-6
+              section
+                h2.h5.text-muted Trạng thái
+                if(productDetail.status)
+                  p.badge.bg-success.fs-6 Đang hoạt động
+                else
+                  p.badge.bg-secondary.fs-6 Ngừng hoạt động
+          section.mb-4
+            h2.h5.text-muted Ảnh sản phẩm
+            if(productDetail.thumbnail)
+              img.img-fluid.rounded.shadow-sm(src=productDetail.thumbnail alt=productDetail.title)

@@ -1,0 +1,72 @@
+footer.bg-light.py-5
+  .container
+    .row.g-5
+      // Bootstrap Info Column
+      .col-lg-3.mb-3
+        a.d-inline-flex.align-items-center.mb-2.text-body-emphasis.text-decoration-none(href='/')
+          img.me-2(src='/bootstrap-logo.svg' width='40' height='32' alt='Bootstrap Logo')
+          span.fs-4.fw-semibold Bootstrap
+
+        p.text-muted.mb-2
+          | Designed and built with all the love in the world 
+          | by the 
+          a.text-primary(href='/team') Bootstrap team
+          |  with the help of our 
+          a.text-primary(href='/contributors') contributors
+          | .
+
+        p.text-muted.mb-2
+          | Code licensed 
+          a.text-primary(href='/license') MIT
+          | , docs 
+          a.text-primary(href='/license') CC BY 3.0
+          | .
+
+        p.text-muted.mb-0 Currently v5.3.3.
+
+      // Links Column
+      .col-6.col-lg-2.offset-lg-1.mb-3
+        h5.text-body-emphasis.mb-3 Links
+        ul.list-unstyled
+          each item in ['Home', 'Docs', 'Examples', 'Icons', 'Themes', 'Blog', 'Swag Store']
+            li.mb-2
+              a.text-muted.text-decoration-none.hover-primary(href=`/${item.toLowerCase().replace(' ', '-')}`)= item
+
+      // Guides Column
+      .col-6.col-lg-2.mb-3
+        h5.text-body-emphasis.mb-3 Guides
+        ul.list-unstyled
+          each item in ['Getting started', 'Starter template', 'Webpack', 'Parcel', 'Vite']
+            li.mb-2
+              a.text-muted.text-decoration-none.hover-primary(href=`/guides/${item.toLowerCase().replace(' ', '-')}`)= item
+
+      // Projects Column
+      .col-6.col-lg-2.mb-3
+        h5.text-body-emphasis.mb-3 Projects
+        ul.list-unstyled
+          each item in ['Bootstrap 5', 'Bootstrap 4', 'Icons', 'RFS', 'Examples repo']
+            li.mb-2
+              a.text-muted.text-decoration-none.hover-primary(href=`/projects/${item.toLowerCase().replace(' ', '-')}`)= item
+
+      // Community Column
+      .col-6.col-lg-2.mb-3
+        h5.text-body-emphasis.mb-3 Community
+        ul.list-unstyled
+          each item in ['Issues', 'Discussions', 'Corporate sponsors', 'Open Collective', 'Stack Overflow']
+            li.mb-2
+              a.text-muted.text-decoration-none.hover-primary(href=`/community/${item.toLowerCase().replace(' ', '-')}`)= item
+
+    hr.my-5
+
+    .d-flex.justify-content-between.align-items-center
+      p.text-muted.mb-0 © 2023 Bootstrap. All rights reserved.
+      ul.list-inline.mb-0
+        li.list-inline-item
+          a.text-muted(href='#')
+            i.bi.bi-twitter
+        li.list-inline-item
+          a.text-muted(href='#')
+            i.bi.bi-github
+        li.list-inline-item
+          a.text-muted(href='#')
+            i.bi.bi-slack
