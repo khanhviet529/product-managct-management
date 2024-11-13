@@ -1,25 +1,26 @@
 const productModel = require('../../models/product.model.js');
 
 module.exports.index =  async (req, res) => {
-    const products = await productModel.find({
-        status: true,
-        deleted: false
-    }).sort({position: "desc"});
-    const newmProducts = products.map(product => {
-    //    const newPrice = (product.price *( 100 - product.discountPercentage)/100).toFixed(2);
-    //    return {
-    //        ...product._doc,
-    //        newPrice
-    //    }
-        product.newPrice = (product.price *( 100 - product.discountPercentage)/100).toFixed(2);
-        return product;
-    });
-    console.log(newmProducts);
-    res.render('client/pages/products/index', {
-        title: "product",
-        message: "product",
-        products: newmProducts
-    })
+    // const products = await productModel.find({
+    //     status: true,
+    //     deleted: false
+    // }).sort({position: "desc"});
+    // const newmProducts = products.map(product => {
+    // //    const newPrice = (product.price *( 100 - product.discountPercentage)/100).toFixed(2);
+    // //    return {
+    // //        ...product._doc,
+    // //        newPrice
+    // //    }
+    //     product.newPrice = (product.price *( 100 - product.discountPercentage)/100).toFixed(2);
+    //     return product;
+    // });
+    // console.log(newmProducts);
+    // res.render('client/pages/products/index', {
+    //     title: "product",
+    //     message: "product",
+    //     products: newmProducts
+    // })
+    res.send("ádsada");
 }
 
 module.exports.detail =async (req, res) => {
