@@ -10,7 +10,7 @@ block main
     each item in products
       .col-4.mb-3
         .product-item
-          a(href=`detail/${item.slug}` style= "text-decoration: none;") 
+          a(href=`/products/detail/${item.slug}` style= "text-decoration: none;") 
             .inner-image
               img(src= item.thumbnail, alt="iPhone 9")
             .inner-content
