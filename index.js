@@ -36,7 +36,6 @@ routerAdmin(app);
   
 // Phía bên người dùng sẽ xem được những mục được public
 app.use(express.static(`${__dirname}/public`));
-console.log('Server is running at http://localhost:' + __dirname)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

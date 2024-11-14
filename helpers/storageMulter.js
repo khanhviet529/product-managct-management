@@ -2,9 +2,9 @@ const multer  = require('multer')
 
 module.exports = () => {
   const storage = multer.diskStorage({
-    
     destination: function (req, file, cb) {
-      cb(null, `.${__dirname}/public/uploads`)
+      console.log('upload' + __dirname );
+      cb(null, `./public/uploads`)
     },
     filename: function (req, file, cb) {
       // console.log( "origin:" + file.originalname.split('-').length);

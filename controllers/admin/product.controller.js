@@ -120,14 +120,13 @@ module.exports.createPost = async (req, res) => {
     req.body.stock = parseInt(req.body.stock);
     req.body.status = req.body.status === 'active' ? true : false;
     const count = await productModel.countDocuments();
-    console.log(req.file);
     if(req.body.position === ""){
         req.body.position = count + 1;
     }
     else{
         req.body.position = parseInt(req.body.position);
     }
-    req.body.thumbnail = `/uploads/${req.file.filename}`;
+    
     const product = new productModel(req.body);
     product.save();
     // res.redirect('/admin/products'); // chạy vào router 
